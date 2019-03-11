@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Hac Portal</title>
+  <meta name="description" content="Home Access Center Portal">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <form id="form" onsubmit="return false;">
+    <input type="text" id="user" />
+    <input type="password" id="pass" />
+    <input type="submit" onclick="main();" />
+  </form>
+
+<script>
+function main() {
+    var name = document.getElementById("user").value;
+    var pass = document.getElementById("pass").value;
+    alert("Username: " + name + " " + "Password: " + pass);
+}
+</script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
