@@ -1,0 +1,35 @@
+.container {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  border: 3px solid black;
+  border-radius: 25px;
+  background: #34495e;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.title {
+  padding-top: 50px;
+  color: #ecf0f1
+}
+
+.field {
+  padding-top: 20px;
+}
+
+#dropdown {
+  width: 173px;
+}

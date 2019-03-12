@@ -11,19 +11,35 @@
 </head>
 
 <body>
-  <form id="form" onsubmit="return false;">
-    <input type="text" id="user" />
-    <input type="password" id="pass" />
-    <input type="submit" onclick="main();" />
-  </form>
+  <div class="container">
+    <div class="title">
+    <center><h1>Home Access Center Portal</h1></center>
+    <center><h3>Please give us your data.</h3></center>
+    </div>
+    <div class="center">
+      <form id="form" onsubmit="return false;">
+        <div class="field">
+          <select name="dropdown" id="dropdown">
+            <option value="District 1">District 1</option>
+            <option value="District 2">District 2</option>
+            <option value="District 3">District 3</option>
+            <option value="District 4">District 4</option>
+          </select>
+        </div>
+        <div class="field">
+          <input type="text" id="user" />
+        </div>
+        <div class="field">
+          <input type="password" id="pass" />
+        </div>
+        <div class="field">
+          <center><input type="submit" onclick="main();" /></center>
+        </div>
+      </form>
+    </div>
+  </div>
 
-<script>
-function main() {
-    var name = document.getElementById("user").value;
-    var pass = document.getElementById("pass").value;
-    alert("Username: " + name + " " + "Password: " + pass);
-}
-</script>
-  <script src="js/scripts.js"></script>
+<script src="js/scripts.js"></script>
+
 </body>
 </html>
