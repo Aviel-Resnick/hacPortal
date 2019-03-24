@@ -16,10 +16,12 @@
       <h1>Home Access Center Portal</h1>
       <h3>Please give us your data.</h3>
     </div>
-    <div class="center">
+    <div class="center title">
       <form id="form" onsubmit="return false;">
         <div class="field">
+          <label for = "dropdown">District: </label>
           <select name="dropdown" id="dropdown">
+            <option value="">--- Select a District ---</option>
             <option value="District 1">District 1</option>
             <option value="District 2">District 2</option>
             <option value="District 3">District 3</option>
@@ -27,13 +29,15 @@
           </select>
         </div>
         <div class="field">
+          <label for = "user">User: </label>
           <input type="text" id="user" />
         </div>
         <div class="field">
+          <label for = "pass">Password: </label>
           <input type="password" id="pass" />
         </div>
         <div class="field">
-          <center><input type="submit" onclick="main();" /></center>
+          <input type="submit" onclick="main();" />
         </div>
       </form>
     </div>
