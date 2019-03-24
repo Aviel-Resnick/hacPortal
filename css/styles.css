@@ -26,6 +26,10 @@
   color: #ecf0f1
 }
 
+.title h1, .title h3 {
+  text-align: center;
+}
+
 .field {
   padding-top: 20px;
 }
