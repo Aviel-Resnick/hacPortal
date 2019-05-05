@@ -21,13 +21,14 @@ function submittedData() {
     alert("Username: " + name + " " + "Password: " + pass);
 
    console.log("changing grades!")
-   writeUserData(85);
+   writeUserData("phil", 85);
 
    window.location.href = "dispGrades.html";
 }
 
 function writeUserData(userId, grade) {
- firebase.database().ref('User 1/').set({
-   Grade: grade
+ firebase.database().ref('Users/User 1/').set({
+   Grade: grade,
+   SecondGrade: grade
  });
 }
