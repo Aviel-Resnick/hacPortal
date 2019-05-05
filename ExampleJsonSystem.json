@@ -1,0 +1,47 @@
+{
+  "GPA" : "2.66",
+
+  "Classes" : {
+    "Biology" : {
+      "Average" : "65.38",
+      "Assignments" : {
+        "A0" : {
+          "Name" : "cells test",
+          "SP" : "65",
+          "TP" : "100"
+        },
+        "A1" : {
+          "name" : "pop quiz",
+          "SP" : "2",
+          "TP" : "50"
+        },
+        "A2" : {
+          "name" : "participation grade",
+          "SP" : "30",
+          "TP" : "30"
+        },
+        "A3" : {
+          "name" : "homework 1",
+          "SP" : "20",
+          "TP" : "30"
+        }
+      }
+    },
+
+    "Physical Education": {
+      "Average" : "99.99",
+      "Assignments" : {
+        "A0" : {
+          "Name" : "football/soccer",
+          "SP" : "8",
+          "TP" : "10",
+        }
+        "A1" : {
+          "Name" : "frisbee",
+          "SP" : "4",
+          "TP" : "10",
+        }
+      }
+    }
+  }
+}

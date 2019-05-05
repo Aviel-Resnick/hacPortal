@@ -14,21 +14,77 @@ firebase.initializeApp(firebaseConfig);
 // Get a reference to the database service
 var database = firebase.database();
 
-
 function submittedData() {
-    var name = document.getElementById("user").value;
+    var uname = document.getElementById("user").value;
     var pass = document.getElementById("pass").value;
     alert("Username: " + name + " " + "Password: " + pass);
 
-   console.log("changing grades!")
-   writeUserData("phil", 85);
+    //TODO log in to home Access
+    //TODO scrape home Access
+    //TODO store the scraped data somehow.
+
+    //mark+rauf, hopefully your code can return one json which contains
+    // all necessary info of the user's grades.
+    // See the file "exampleGradeSystem.json" - that is the format that
+    // is being used to update the firebase system.
+
+    var jsonGradeSystem = returnExampleGradesSystem();
+
+    firebase.database().ref('Users/' + uname ).set(
+      jsonGradeSystem);
 
    window.location.href = "dispGrades.html";
 }
 
-function writeUserData(userId, grade) {
- firebase.database().ref('Users/User 1/').set({
-   Grade: grade,
-   SecondGrade: grade
- });
+function returnExampleGradesSystem(){
+  var exampleSystem =
+  {
+    "GPA" : "2.66",
+
+    "Classes" : {
+      "Biology" : {
+        "Average" : "65.38",
+        "Assignments" : {
+          "A0" : {
+            "Name" : "cells test",
+            "SP" : "65",
+            "TP" : "100"
+          },
+          "A1" : {
+            "name" : "pop quiz",
+            "SP" : "2",
+            "TP" : "50"
+          },
+          "A2" : {
+            "name" : "participation grade",
+            "SP" : "30",
+            "TP" : "30"
+          },
+          "A3" : {
+            "name" : "homework 1",
+            "SP" : "20",
+            "TP" : "30"
+          }
+        }
+      },
+
+      "Physical Education": {
+        "Average" : "99.99",
+        "Assignments" : {
+          "A0" : {
+            "Name" : "football/soccer",
+            "SP" : "8",
+            "TP" : "10",
+          },
+          "A1" : {
+            "Name" : "frisbee",
+            "SP" : "4",
+            "TP" : "10",
+          }
+        }
+      }
+    }
+  }
+
+  return exampleSystem;
 }
