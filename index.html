@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <script src="js/login.js"></script>
   <title>Hac Portal</title>
   <meta name="description" content="Home Access Center Portal">
   <link rel="stylesheet" href="css/styles.css">
@@ -33,7 +32,7 @@
           <input type="password" id="pass" />
         </div>
         <div class="field">
-          <center> <input type="submit" onclick="main();" /> </center>
+          <center> <input type="submit" onclick="submittedData();" /> </center>
         </div>
       </form>
     </div>
@@ -42,23 +41,13 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
 
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
   <!-- TODO: Add SDKs for Firebase products that you want to use
        https://firebase.google.com/docs/web/setup#config-web-app -->
 
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyDXyzlPxV14EIPnskehmxNo5uYNqOE8e30",
-      authDomain: "home-access-access.firebaseapp.com",
-      databaseURL: "https://home-access-access.firebaseio.com",
-      projectId: "home-access-access",
-      storageBucket: "home-access-access.appspot.com",
-      messagingSenderId: "396567472683",
-      appId: "1:396567472683:web:538be5e028fa402a"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
+  <script src="js/login.js"></script>
 
 </body>
 </html>
