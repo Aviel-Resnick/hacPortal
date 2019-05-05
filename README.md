@@ -1,2 +1,2 @@
 # hacPortal
-Home Access Center Portal (Web Scraping Test)
+Home Access Center Portal for viewing grades.
