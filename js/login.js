@@ -17,7 +17,7 @@ var database = firebase.database();
 function submittedData() {
     var uname = document.getElementById("user").value;
     var pass = document.getElementById("pass").value;
-    alert("Username: " + name + " " + "Password: " + pass);
+    alert("Username: " + uname + " " + "Password: " + pass);
 
     //TODO log in to home Access
     //TODO scrape home Access
@@ -33,10 +33,13 @@ function submittedData() {
     firebase.database().ref('Users/' + uname ).set(
       jsonGradeSystem);
 
-   window.location.href = "dispGrades.html";
+    window.location.href = "dispGrades.html";
+
 }
 
 function returnExampleGradesSystem(){
+  //this is just an example of a grade system. to be replaced by
+  // the homeAccess scraped data by Mark and Rauf.
   var exampleSystem =
   {
     "GPA" : "2.66",
