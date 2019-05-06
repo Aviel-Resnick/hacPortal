@@ -22,4 +22,4 @@ const puppeteer = require('puppeteer');
   await page.screenshot({path: 'mainpage.png'});
   browser.close()
   console.log("Done")
-})()
+})();
