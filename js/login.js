@@ -1,5 +1,21 @@
+//main function: launcher
+function launcher(){
+  var uname = document.getElementById("user").value;
+  var pass = document.getElementById("pass").value;
+  alert("Username: " + uname + " " + "Password: " + pass);
+
+  //TODO: CALL RAUF AND MARK'S PART with a function
+
+  var exampleGradeSystem = returnExampleGradesSystem();
+  submittedData(uname, exampleGradeSystem); //uploads the grades to firebase
+
+  console.log(pullGrades(uname));
+  window.location.href = "dispGrades.html";
+
+}
+
 //Log into HAC
-const puppeteer = require('puppeteer');
+/*const puppeteer = require('puppeteer');
 
 (async () => {
   var username = "something"; //Change the value and place -> have it retrieved from the webpage
@@ -23,3 +39,4 @@ const puppeteer = require('puppeteer');
   browser.close()
   console.log("Done")
 })();
+*/

@@ -14,6 +14,11 @@ firebase.initializeApp(firebaseConfig);
 // Get a reference to the database service
 var database = firebase.database();
 
+var uname;
+
+function setUname(theName){
+  uname = theName;
+}
 
 
 function pullGrades() {
@@ -24,31 +29,18 @@ function pullGrades() {
     gradeSystem = ((snapshot.val()));
   });
 
-  console.log(gradeSystem);
+  return gradeSystem;
 }
 
 
-function submittedData() {
-    var uname = document.getElementById("user").value;
-    var pass = document.getElementById("pass").value;
-    alert("Username: " + uname + " " + "Password: " + pass);
-
-    //TODO log in to home Access
-    //TODO scrape home Access
-    //TODO store the scraped data somehow.
-
-    //mark+rauf, hopefully your code can return one json which contains
-    // all necessary info of the user's grades.
-    // See the file "exampleGradeSystem.json" - that is the format that
-    // is being used to update the firebase system.
+function submittedData(theName) {
+    var theName = document.getElementById("user").value;
+    setUname(theName);
 
     var jsonGradeSystem = returnExampleGradesSystem();
 
-    firebase.database().ref('Users/' + uname ).set(
+    firebase.database().ref('Users/' + theName ).set(
       jsonGradeSystem);
-
-    window.location.href = "dispGrades.html";
-
 }
 
 function returnExampleGradesSystem(){
