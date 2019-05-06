@@ -1,93 +1,25 @@
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyDXyzlPxV14EIPnskehmxNo5uYNqOE8e30",
-  authDomain: "home-access-access.firebaseapp.com",
-  databaseURL: "https://home-access-access.firebaseio.com",
-  projectId: "home-access-access",
-  storageBucket: "home-access-access.appspot.com",
-  messagingSenderId: "396567472683",
-  appId: "1:396567472683:web:538be5e028fa402a"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+//Log into HAC
+const puppeteer = require('puppeteer');
 
-// Get a reference to the database service
-var database = firebase.database();
+(async () => {
+  var username = "something"; //Change the value and place -> have it retrieved from the webpage
+  var password = "something"; //Change the value and place -> have it retrieved from the webpage
+  const browser = await puppeteer.launch({headless: true})
+  const page = await browser.newPage()
+  await page.goto('https://hac40.eschoolplus.powerschool.com/HAC4_001/Account/LogOn?ReturnUrl=%2fHAC4_001%3fSiteCode%3dlmrlive&SiteCode=lmrlive')
 
-function submittedData() {
-    var uname = document.getElementById("user").value;
-    var pass = document.getElementById("pass").value;
-    alert("Username: " + uname + " " + "Password: " + pass);
+  //Input the values
+  await page.type('#LogOnDetails_UserName', username)
+  await page.type('#LogOnDetails_Password', password)
 
-    //TODO log in to home Access
-    //TODO scrape home Access
-    //TODO store the scraped data somehow.
+  //Load the new page
+  await Promise.all([
+    page.waitForNavigation({ waitUntil: 'load' }),
+    page.click('[class="sg-button sg-logon-button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"]'),
+  ]);
 
-    //mark+rauf, hopefully your code can return one json which contains
-    // all necessary info of the user's grades.
-    // See the file "exampleGradeSystem.json" - that is the format that
-    // is being used to update the firebase system.
-
-    var jsonGradeSystem = returnExampleGradesSystem();
-
-    firebase.database().ref('Users/' + uname ).set(
-      jsonGradeSystem);
-
-    window.location.href = "dispGrades.html";
-
-}
-
-function returnExampleGradesSystem(){
-  //this is just an example of a grade system. to be replaced by
-  // the homeAccess scraped data by Mark and Rauf.
-  var exampleSystem =
-  {
-    "GPA" : "2.66",
-
-    "Classes" : {
-      "Biology" : {
-        "Average" : "65.38",
-        "Assignments" : {
-          "A0" : {
-            "Name" : "cells test",
-            "SP" : "65",
-            "TP" : "100"
-          },
-          "A1" : {
-            "name" : "pop quiz",
-            "SP" : "2",
-            "TP" : "50"
-          },
-          "A2" : {
-            "name" : "participation grade",
-            "SP" : "30",
-            "TP" : "30"
-          },
-          "A3" : {
-            "name" : "homework 1",
-            "SP" : "20",
-            "TP" : "30"
-          }
-        }
-      },
-
-      "Physical Education": {
-        "Average" : "99.99",
-        "Assignments" : {
-          "A0" : {
-            "Name" : "football/soccer",
-            "SP" : "8",
-            "TP" : "10",
-          },
-          "A1" : {
-            "Name" : "frisbee",
-            "SP" : "4",
-            "TP" : "10",
-          }
-        }
-      }
-    }
-  }
-
-  return exampleSystem;
-}
+  //Take a screenshot of what the headless chrome displays
+  await page.screenshot({path: 'mainpage.png'});
+  browser.close()
+  console.log("Done")
+})()
