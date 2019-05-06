@@ -1,5 +1,5 @@
 function addTable() {
-  window.alert("I am button");
+  window.alert("Bar");
   var table = document.createElement('table');
 
   // this will be the number of assignments = number of objects pulled
@@ -40,15 +40,15 @@ function addTable() {
     var td3 = document.createElement('td');
     var td4 = document.createElement('td');
 
-    var text1 = document.createTextNode('cells test');
-    var text2 = document.createTextNode('65');
-    var text3 = document.createTextNode('100');
-    var text4 = document.createTextNode('65');
+    var name = document.createTextNode('cells test');
+    var pointsEarned = document.createTextNode('65');
+    var maxPoints = document.createTextNode('100');
+    var percent = document.createTextNode('65');
 
-    td1.appendChild(text1);
-    td2.appendChild(text2);
-    td3.appendChild(text3);
-    td4.appendChild(text4);
+    td1.appendChild(name);
+    td2.appendChild(pointsEarned);
+    td3.appendChild(maxPoints);
+    td4.appendChild(percent);
 
     tr.appendChild(td1);
     tr.appendChild(td2);
