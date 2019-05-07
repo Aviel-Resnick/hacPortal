@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDXyzlPxV14EIPnskehmxNo5uYNqOE8e30",
@@ -206,4 +205,3 @@ function returnExampleGradesSystem(){
 
   return exampleSystem;
 }
->>>>>>> bf326c20abffa5bbb41a7d3f33030aa63afa3c9d

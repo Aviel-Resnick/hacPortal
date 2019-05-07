@@ -1,4 +1,3 @@
-=======
 //main function: launcher
 function launcher(){
   var uname = document.getElementById("user").value;
