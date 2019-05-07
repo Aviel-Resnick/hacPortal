@@ -9,7 +9,7 @@ function launcher(){
   var exampleGradeSystem = returnExampleGradesSystem();
   submittedData(uname, exampleGradeSystem); //uploads the grades to firebase
 
-  console.log(pullGrades(uname));
+  console.log(pullGrades());
   window.location.href = "dispGrades.html";
 
 }
