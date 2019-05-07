@@ -1,5 +1,19 @@
+var gradeSystem = pullGrades();
+
 function addTable() {
   window.alert("Bar");
+
+  // split
+  var bar = document.createElement("hr");
+  document.getElementById("tableContainer").appendChild(bar);
+
+  // header section
+  var subject = "BIOLOGY"
+  var header = document.createElement("button");
+  header.innerHTML = subject;
+  header.className += " " + "collapsible";
+  document.getElementById("tableContainer").appendChild(header);
+
   var table = document.createElement('table');
 
   // this will be the number of assignments = number of objects pulled

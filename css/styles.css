@@ -22,6 +22,26 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
 .container p {
     margin: 0;
     color: white;
@@ -72,4 +92,11 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   background-color: #bdc3c7;
+}
+
+hr{
+  height: 1px;
+  color: white;
+  background-color: white;
+  border: none;
 }
