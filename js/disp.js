@@ -12,9 +12,11 @@ function addTable() {
   var header = document.createElement("button");
   header.innerHTML = subject;
   header.className += " " + "collapsible";
+  header.onclick = function() {collapse(); };
   document.getElementById("tableContainer").appendChild(header);
 
   var table = document.createElement('table');
+  table.className += " " + "content";
 
   // this will be the number of assignments = number of objects pulled
   var rows = 4
@@ -72,4 +74,16 @@ function addTable() {
     table.appendChild(tr);
   }
   document.getElementById("tableContainer").appendChild(table);
+}
+
+function collapse() {
+  var obj = document.getElementsByClassName("content")[0];
+
+  var isVisible = obj.style.display == "inline";
+
+  if (isVisible == true) {
+    obj.style.display = "none";
+  } else {
+    obj.style.display = "inline";
+  }
 }
